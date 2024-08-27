@@ -71,6 +71,40 @@ function Home() {
             코딩 없이 AI 앱을 만들어 배포하고 수익화까지 해보세요.
           </CourseDescription>
         </CourseCard>
+        <CourseCard to="/data-marketing">
+          <CourseTitle>GA4와 SQL로 데이터마케팅 한번에 끝내기</CourseTitle>
+          <CourseDescription>
+            데이터 분석을 통한 마케팅 방법을 배워 고객 니즈를 정확히
+            파악해보세요.
+          </CourseDescription>
+        </CourseCard>
+        <CourseCard to="/data-analysis">
+          <CourseTitle>마케터 기획자를 위한 실전 데이터 분석</CourseTitle>
+          <CourseDescription>
+            데이터 분석을 통한 마케팅 방법을 배워 고객 니즈를 정확히
+            파악해보세요.
+          </CourseDescription>
+        </CourseCard>
+        <CourseCard to="/sql">
+          <CourseTitle>엑셀보다 쉽고 빠른 SQL</CourseTitle>
+          <CourseDescription>
+            데이터 분석을 통한 마케팅 방법을 배워 고객 니즈를 정확히
+            파악해보세요.
+          </CourseDescription>
+        </CourseCard>
+        <CourseCard to="/web-development">
+          <CourseTitle>코딩이 처음이어도 쉽게 배우는 웹개발 A to Z</CourseTitle>
+          <CourseDescription>
+            웹개발의 기초, 쉽게 시작할 수 있어요.
+          </CourseDescription>
+        </CourseCard>
+        <CourseCard to="/chatgpt">
+          <CourseTitle>ChatGPT 300% 활용하기</CourseTitle>
+          <CourseDescription>
+            ChatGPT를 이용하여 일상 생활, 직무 업무 등 다양한 분야에서 활용해
+            보세요.
+          </CourseDescription>
+        </CourseCard>
       </CourseList>
     </HomeContainer>
   );

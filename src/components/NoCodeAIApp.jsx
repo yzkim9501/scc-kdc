@@ -1,101 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import HexagonGraph from "./HexagonGraph";
-
-const colors = {
-  primary: "#E8344E",
-  secondary: "#F05365",
-  tertiary: "#D62839",
-  quaternary: "#FF6B6B",
-  quinary: "#C1292E",
-};
-
-const NoCodeAIAppContainer = styled.div`
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #f8f9fa;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  color: ${colors.primary};
-  margin-bottom: 40px;
-  text-align: center;
-`;
-
-const Section = styled.section`
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin-bottom: 40px;
-  width: 100%;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 1.8rem;
-  color: ${colors.secondary};
-  margin-bottom: 20px;
-  border-bottom: 2px solid ${colors.secondary};
-  padding-bottom: 10px;
-`;
-
-const Content = styled.div`
-  font-size: 1rem;
-  line-height: 1.6;
-  width: 100%;
-`;
-
-const List = styled.ul`
-  list-style-type: none;
-  padding-left: 0;
-`;
-
-const ListItem = styled.li`
-  margin-bottom: 15px;
-  padding-left: 20px;
-  position: relative;
-
-  &:before {
-    content: "•";
-    color: ${colors.tertiary};
-    position: absolute;
-    left: 0;
-  }
-`;
-
-const SubTitle = styled.h3`
-  font-size: 1.4rem;
-  color: ${colors.quaternary};
-  margin-top: 30px;
-  margin-bottom: 15px;
-`;
-
-const WeekToggle = styled.h4`
-  font-size: 1.2rem;
-  color: ${colors.quinary};
-  cursor: pointer;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-
-  &:hover {
-    color: ${colors.primary};
-  }
-
-  &:before {
-    content: ${(props) => (props.isOpen ? '"▼"' : '"▶"')};
-    margin-right: 10px;
-    font-size: 0.8rem;
-  }
-`;
+import * as S from "../styles/CommonStyles";
 
 const weeklyContent = [
   {
@@ -157,61 +62,61 @@ function NoCodeAIApp() {
   };
 
   return (
-    <NoCodeAIAppContainer>
-      <Title>노코드로 수익형 AI 앱만들기</Title>
+    <S.Container>
+      <S.Title>노코드로 수익형 AI 앱만들기</S.Title>
 
-      <Section>
-        <SectionTitle>과목 요약</SectionTitle>
-        <Content>
-          <SubTitle>강의 한 줄 설명</SubTitle>
-          <List>
-            <ListItem>
+      <S.Section>
+        <S.SectionTitle>과목 요약</S.SectionTitle>
+        <S.Content>
+          <S.SubTitle>강의 한 줄 설명</S.SubTitle>
+          <S.List>
+            <S.ListItem>
               코드(코딩)없이 AI 앱을 만들어서 배포하여 수익화까지 해볼 수 있는
               강의
-            </ListItem>
-            <ListItem>학습량: 주 2시간</ListItem>
-            <ListItem>총 강의 수: 35개</ListItem>
-            <ListItem>총 플레이 타임: 7시간 3분</ListItem>
-            <ListItem>
+            </S.ListItem>
+            <S.ListItem>학습량: 주 2시간</S.ListItem>
+            <S.ListItem>총 강의 수: 35개</S.ListItem>
+            <S.ListItem>총 플레이 타임: 7시간 3분</S.ListItem>
+            <S.ListItem>
               난이도: 하 (코딩을 배워본 적이 없어도 수강 가능)
-            </ListItem>
-          </List>
-          <SubTitle>Flutterflow란?</SubTitle>
-          <List>
-            <ListItem>
+            </S.ListItem>
+          </S.List>
+          <S.SubTitle>Flutterflow란?</S.SubTitle>
+          <S.List>
+            <S.ListItem>
               FlutterFlow는 코딩을 잘 모르더라도 모바일 앱을 쉽게 만들 수 있게
               도와주는 도구예요!
-            </ListItem>
-            <ListItem>
+            </S.ListItem>
+            <S.ListItem>
               마치 레고 블록을 조립하듯이 다양한 기능을 화면에 드래그 앤
               드롭(끌어서 놓기)하면서 앱을 쉽게 만들 수 있어요!
-            </ListItem>
-          </List>
-        </Content>
-      </Section>
+            </S.ListItem>
+          </S.List>
+        </S.Content>
+      </S.Section>
 
-      <Section>
-        <SectionTitle>세일즈</SectionTitle>
-        <Content>
-          <SubTitle>추천 고객</SubTitle>
-          <List>
-            <ListItem>
+      <S.Section>
+        <S.SectionTitle>세일즈</S.SectionTitle>
+        <S.Content>
+          <S.SubTitle>추천 고객</S.SubTitle>
+          <S.List>
+            <S.ListItem>
               코딩 학습 없이 빠르게 AI서비스 앱을 만들어 보고 싶은 분
-            </ListItem>
-            <ListItem>
+            </S.ListItem>
+            <S.ListItem>
               AI는 학습 시키는 과정이 필요한데, 처음부터 그 학습이 적용되어 있는
               상태로, 나에게 최적화된 GPT 같은 AI 서비스(앱)을 만들고 싶은 분들
-            </ListItem>
-          </List>
-          <SubTitle>선수과목</SubTitle>
-          <List>
-            <ListItem>없음</ListItem>
-          </List>
-          <SubTitle>누적 수강생</SubTitle>
-          <List>
-            <ListItem>전체 기준: 56명</ListItem>
-          </List>
-          <SubTitle>밸런스표</SubTitle>
+            </S.ListItem>
+          </S.List>
+          <S.SubTitle>선수과목</S.SubTitle>
+          <S.List>
+            <S.ListItem>없음</S.ListItem>
+          </S.List>
+          <S.SubTitle>누적 수강생</S.SubTitle>
+          <S.List>
+            <S.ListItem>전체 기준: 56명</S.ListItem>
+          </S.List>
+          <S.SubTitle>밸런스표</S.SubTitle>
           <HexagonGraph
             data={[
               { label: "의사결정", value: 2 },
@@ -222,27 +127,27 @@ function NoCodeAIApp() {
               { label: "리서치능력", value: 1 },
             ]}
           />
-        </Content>
-      </Section>
+        </S.Content>
+      </S.Section>
 
-      <Section>
-        <SectionTitle>커리큘럼</SectionTitle>
-        <Content>
-          <SubTitle>사용 프로그램</SubTitle>
-          <List>
-            <ListItem>FlutterFlow</ListItem>
-            <ListItem>ChatGPT 4o</ListItem>
-          </List>
-          <SubTitle>실습 환경</SubTitle>
-          <List>
-            <ListItem>FlutterFlow</ListItem>
-            <ListItem>Firebase</ListItem>
-            <ListItem>ChatGPT 4o</ListItem>
-            <ListItem>Google AdMob (애드몹)</ListItem>
-          </List>
-          <SubTitle>구현하는 기능</SubTitle>
-          <List>
-            <ListItem>
+      <S.Section>
+        <S.SectionTitle>커리큘럼</S.SectionTitle>
+        <S.Content>
+          <S.SubTitle>사용 프로그램</S.SubTitle>
+          <S.List>
+            <S.ListItem>FlutterFlow</S.ListItem>
+            <S.ListItem>ChatGPT 4o</S.ListItem>
+          </S.List>
+          <S.SubTitle>실습 환경</S.SubTitle>
+          <S.List>
+            <S.ListItem>FlutterFlow</S.ListItem>
+            <S.ListItem>Firebase</S.ListItem>
+            <S.ListItem>ChatGPT 4o</S.ListItem>
+            <S.ListItem>Google AdMob (애드몹)</S.ListItem>
+          </S.List>
+          <S.SubTitle>구현하는 기능</S.SubTitle>
+          <S.List>
+            <S.ListItem>
               이론:
               <ul>
                 <li>Flutter 기초</li>
@@ -250,8 +155,8 @@ function NoCodeAIApp() {
                 <li>AI 연동 익히기</li>
                 <li>앱 배포</li>
               </ul>
-            </ListItem>
-            <ListItem>
+            </S.ListItem>
+            <S.ListItem>
               실제 구현 기능:
               <ul>
                 <li>
@@ -261,39 +166,41 @@ function NoCodeAIApp() {
                 <li>Flutterflow에 서버와 ChatGPT API를 연동하기</li>
                 <li>제작한 앱의 수익화 방법에 대해 배우고, 스토어에 배포</li>
               </ul>
-            </ListItem>
-          </List>
-          <SubTitle>주차별 상세</SubTitle>
+            </S.ListItem>
+          </S.List>
+          <S.SubTitle>주차별 상세</S.SubTitle>
           {weeklyContent.map(({ week, title, content }) => (
             <div key={week}>
-              <WeekToggle
+              <S.WeekToggle
                 onClick={() => toggleWeek(week)}
                 isOpen={openWeeks[week]}
               >
                 {week}주차
-              </WeekToggle>
+              </S.WeekToggle>
               {openWeeks[week] && (
-                <List>
-                  <ListItem>{title}</ListItem>
+                <S.List>
+                  <S.ListItem>{title}</S.ListItem>
                   {content.map((item, index) => (
-                    <ListItem key={index}>{item}</ListItem>
+                    <S.ListItem key={index}>{item}</S.ListItem>
                   ))}
-                </List>
+                </S.List>
               )}
             </div>
           ))}
-          <SubTitle>결과물</SubTitle>
-          <List>
-            <ListItem>엑셀 수식 자동 생성 AI 앱 1개</ListItem>
-          </List>
-          <SubTitle>로드맵</SubTitle>
-          <List>
-            <ListItem>수익형이 하고싶으면 → 노코드로 웹사이트 만들기</ListItem>
-            <ListItem>앱이 하고싶으면 → kotlin / 앱종</ListItem>
-          </List>
-        </Content>
-      </Section>
-    </NoCodeAIAppContainer>
+          <S.SubTitle>결과물</S.SubTitle>
+          <S.List>
+            <S.ListItem>엑셀 수식 자동 생성 AI 앱 1개</S.ListItem>
+          </S.List>
+          <S.SubTitle>로드맵</S.SubTitle>
+          <S.List>
+            <S.ListItem>
+              수익형이 하고싶으면 → 노코드로 웹사이트 만들기
+            </S.ListItem>
+            <S.ListItem>앱이 하고싶으면 → kotlin / 앱종</S.ListItem>
+          </S.List>
+        </S.Content>
+      </S.Section>
+    </S.Container>
   );
 }
 

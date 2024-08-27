@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import HexagonGraph from "./HexagonGraph";
+import * as S from "../styles/CommonStyles";
 
 // 색상 변형 추가
 const colors = {
@@ -10,94 +10,6 @@ const colors = {
   quaternary: "#FF6B6B",
   quinary: "#C1292E",
 };
-
-const AlgorithmContainer = styled.div`
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #f8f9fa;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  color: ${colors.primary};
-  margin-bottom: 40px;
-  text-align: center;
-`;
-
-const Section = styled.section`
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin-bottom: 40px;
-  width: 100%;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 1.8rem;
-  color: ${colors.secondary};
-  margin-bottom: 20px;
-  border-bottom: 2px solid ${colors.secondary};
-  padding-bottom: 10px;
-`;
-
-const Content = styled.div`
-  font-size: 1rem;
-  line-height: 1.6;
-  width: 100%;
-`;
-
-const List = styled.ul`
-  list-style-type: none;
-  padding-left: 0;
-`;
-
-const ListItem = styled.li`
-  margin-bottom: 15px;
-  padding-left: 20px;
-  position: relative;
-
-  &:before {
-    content: "•";
-    color: ${colors.tertiary};
-    position: absolute;
-    left: 0;
-  }
-`;
-
-const SubTitle = styled.h3`
-  font-size: 1.4rem;
-  color: ${colors.quaternary};
-  margin-top: 30px;
-  margin-bottom: 15px;
-`;
-
-const WeekToggle = styled.h4`
-  font-size: 1.2rem;
-  color: ${colors.quinary};
-  cursor: pointer;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-
-  &:hover {
-    color: ${colors.primary};
-  }
-
-  &:before {
-    content: ${(props) => (props.isOpen ? '"▼"' : '"▶"')};
-    margin-right: 10px;
-    font-size: 0.8rem;
-  }
-`;
-
 const weeklyContent = [
   {
     week: 1,
@@ -188,50 +100,50 @@ function Algorithm() {
   };
 
   return (
-    <AlgorithmContainer>
-      <Title>실무에 바로 쓰이는 알고리즘 by Python</Title>
+    <S.Container>
+      <S.Title>실무에 바로 쓰이는 알고리즘 by Python</S.Title>
 
-      <Section>
-        <SectionTitle>과목 요약</SectionTitle>
-        <Content>
-          <SubTitle>강의 한 줄 설명</SubTitle>
-          <List>
-            <ListItem>
+      <S.Section>
+        <S.SectionTitle>과목 요약</S.SectionTitle>
+        <S.Content>
+          <S.SubTitle>강의 한 줄 설명</S.SubTitle>
+          <S.List>
+            <S.ListItem>
               학습량: 총 5주, 6시간 플레이 타임 (주 약 1시간 30분씩 5주 수강)
-            </ListItem>
-            <ListItem>총 강의 수: 42개</ListItem>
-            <ListItem>총 플레이 타임: 6시간</ListItem>
-            <ListItem>
+            </S.ListItem>
+            <S.ListItem>총 강의 수: 42개</S.ListItem>
+            <S.ListItem>총 플레이 타임: 6시간</S.ListItem>
+            <S.ListItem>
               난이도: 상 (Python을 활용해서 반복문, 조건문을 다뤄본 적 있는
               취준생 / 개발자)
-            </ListItem>
-          </List>
-        </Content>
-      </Section>
+            </S.ListItem>
+          </S.List>
+        </S.Content>
+      </S.Section>
 
-      <Section>
-        <SectionTitle>세일즈</SectionTitle>
-        <Content>
-          <SubTitle>추천 고객</SubTitle>
-          <List>
-            <ListItem>파이썬 실력을 레벨업하고 싶은 사람</ListItem>
-            <ListItem>코딩테스트를 대비하고 싶은 사람</ListItem>
-            <ListItem>빠르게 기술 면접을 대비하고 싶은 사람</ListItem>
-          </List>
-          <SubTitle>선수과목</SubTitle>
-          <List>
-            <ListItem>왕초보 불가</ListItem>
-            <ListItem>선수 목 없음</ListItem>
-            <ListItem>
+      <S.Section>
+        <S.SectionTitle>세일즈</S.SectionTitle>
+        <S.Content>
+          <S.SubTitle>추천 고객</S.SubTitle>
+          <S.List>
+            <S.ListItem>파이썬 실력을 레벨업하고 싶은 사람</S.ListItem>
+            <S.ListItem>코딩테스트를 대비하고 싶은 사람</S.ListItem>
+            <S.ListItem>빠르게 기술 면접을 대비하고 싶은 사람</S.ListItem>
+          </S.List>
+          <S.SubTitle>선수과목</S.SubTitle>
+          <S.List>
+            <S.ListItem>왕초보 불가</S.ListItem>
+            <S.ListItem>선수 목 없음</S.ListItem>
+            <S.ListItem>
               단 대학교 2학년 전공 과목 수준 (컴공과 기준) 이기 때문에, 파이썬
               경험이 없다면 비추천
-            </ListItem>
-          </List>
-          <SubTitle>누적 수강생</SubTitle>
-          <List>
-            <ListItem>총 36명 (국비 26명, 온라인 10명)</ListItem>
-          </List>
-          <SubTitle>밸런스표</SubTitle>
+            </S.ListItem>
+          </S.List>
+          <S.SubTitle>누적 수강생</S.SubTitle>
+          <S.List>
+            <S.ListItem>총 36명 (국비 26명, 온라인 10명)</S.ListItem>
+          </S.List>
+          <S.SubTitle>밸런스표</S.SubTitle>
           <HexagonGraph
             data={[
               { label: "의사결정", value: 4 },
@@ -242,66 +154,66 @@ function Algorithm() {
               { label: "리서치능력", value: 4 },
             ]}
           />
-        </Content>
-      </Section>
+        </S.Content>
+      </S.Section>
 
-      <Section>
-        <SectionTitle>커리큘럼</SectionTitle>
-        <Content>
-          <SubTitle>사용 프로그램 (유료 프로그램 사용 X)</SubTitle>
-          <List>
-            <ListItem>Python (3.12.4 최신 버전)</ListItem>
-            <ListItem>Pycharm (Community 버전)</ListItem>
-            <ListItem>Python Package (request 패키지)</ListItem>
-          </List>
-          <SubTitle>실습 환경</SubTitle>
-          <SubTitle>구현하 기능</SubTitle>
-          <List>
-            <ListItem>
+      <S.Section>
+        <S.SectionTitle>커리큘럼</S.SectionTitle>
+        <S.Content>
+          <S.SubTitle>사용 프로그램 (유료 프로그램 사용 X)</S.SubTitle>
+          <S.List>
+            <S.ListItem>Python (3.12.4 최신 버전)</S.ListItem>
+            <S.ListItem>Pycharm (Community 버전)</S.ListItem>
+            <S.ListItem>Python Package (request 패키지)</S.ListItem>
+          </S.List>
+          <S.SubTitle>실습 환경</S.SubTitle>
+          <S.SubTitle>구현하 기능</S.SubTitle>
+          <S.List>
+            <S.ListItem>
               이론: 시간 복잡도, 공간 복잡도, 점근 표기법 등 알고리즘 이론
-            </ListItem>
-            <ListItem>
+            </S.ListItem>
+            <S.ListItem>
               실제 구현 기능: 정렬, 탐색, 동적 프로그래밍, 다익스트라 (파이썬
               사용)
-            </ListItem>
-          </List>
-          <SubTitle>주차별 상세</SubTitle>
+            </S.ListItem>
+          </S.List>
+          <S.SubTitle>주차별 상세</S.SubTitle>
           {weeklyContent.map(({ week, title, content }) => (
             <div key={week}>
-              <WeekToggle
+              <S.WeekToggle
                 onClick={() => toggleWeek(week)}
                 isOpen={openWeeks[week]}
               >
                 {week}주차
-              </WeekToggle>
+              </S.WeekToggle>
               {openWeeks[week] && (
-                <List>
-                  <ListItem>{title}</ListItem>
+                <S.List>
+                  <S.ListItem>{title}</S.ListItem>
                   {content.map((item, index) => (
-                    <ListItem key={index}>{item}</ListItem>
+                    <S.ListItem key={index}>{item}</S.ListItem>
                   ))}
-                </List>
+                </S.List>
               )}
             </div>
           ))}
-          <SubTitle>결과물</SubTitle>
-          <List>
-            <ListItem>
+          <S.SubTitle>결과물</S.SubTitle>
+          <S.List>
+            <S.ListItem>
               자료 구조: 연결리스트, 스택, 큐, 해시테이블, 힙 직접 구현
-            </ListItem>
-            <ListItem>
+            </S.ListItem>
+            <S.ListItem>
               알고리즘 개념 2개: 정렬 알고리즘 (버블, 선택, 삽입, 퀵, 합병, 힙),
               고급 알고리즘 (다익스트라, 동적 계획법)
-            </ListItem>
-          </List>
-          <SubTitle>로드맵</SubTitle>
-          <List>
-            <ListItem>항해 리부트</ListItem>
-            <ListItem>내일배움캠프, 항해99</ListItem>
-          </List>
-        </Content>
-      </Section>
-    </AlgorithmContainer>
+            </S.ListItem>
+          </S.List>
+          <S.SubTitle>로드맵</S.SubTitle>
+          <S.List>
+            <S.ListItem>항해 리부트</S.ListItem>
+            <S.ListItem>내일배움캠프, 항해99</S.ListItem>
+          </S.List>
+        </S.Content>
+      </S.Section>
+    </S.Container>
   );
 }
 
